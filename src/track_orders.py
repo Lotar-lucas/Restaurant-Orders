@@ -1,19 +1,19 @@
 class TrackOrders:
     def __init__(self):
-        self.orders = []
+        self.dishes = []
 
     def __len__(self):
-        return len(self.orders)
+        return len(self.dishes)
 
     def add_new_order(self, costumer, order, day):
-        return self.orders.append(
+        return self.dishes.append(
             {"name": costumer, "product": order, "day": day}
         )
 
     def get_most_ordered_dish_per_costumer(self, costumer):
         customer_orders = []
 
-        for element in self.orders:
+        for element in self.dishes:
             if element["name"] == costumer:
                 customer_orders.append(element["product"])
 
@@ -23,7 +23,7 @@ class TrackOrders:
         all_the_products = set()
         list_orders_never_asked = set()
 
-        for element in self.orders:
+        for element in self.dishes:
             all_the_products.add(element["product"])
             if element["name"] == costumer:
                 list_orders_never_asked.add(element["product"])
@@ -34,7 +34,7 @@ class TrackOrders:
         all_days = set()
         list_days_never_asked = set()
 
-        for element in self.orders:
+        for element in self.dishes:
             all_days.add(element["day"])
             if element["name"] == costumer:
                 list_days_never_asked.add(element["day"])
