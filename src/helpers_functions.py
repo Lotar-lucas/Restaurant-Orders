@@ -1,5 +1,4 @@
 import csv
-from math import prod
 
 
 def read(path_to_file):
